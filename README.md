@@ -35,6 +35,6 @@ Example request body:
   "category": "Local",
   "imageUrl": null
 }
-```
+```give 
 
 Run the tests with `mvn test`.
