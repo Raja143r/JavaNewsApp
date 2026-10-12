@@ -15,6 +15,17 @@ mvn spring-boot:run
 
 The API is available at `http://localhost:8080/api/articles`. The H2 console is at `http://localhost:8080/h2-console` with JDBC URL `jdbc:h2:mem:newsdb`, username `sa`, and a blank password.
 
+## Run with Docker
+
+Start Docker Desktop and wait until its engine is running. From the project directory, build and run the container:
+
+```powershell
+docker build -t newsapp .
+docker run --rm --name newsapp -p 8080:8080 newsapp
+```
+
+The API is available at `http://localhost:8080/api/articles`. Press `Ctrl+C` to stop the container. Docker builds the app inside the image, so Java and Maven are not required on the host.
+
 ## API
 
 - `GET /api/articles?page=0&size=10` lists articles, newest first.
@@ -35,6 +46,6 @@ Example request body:
   "category": "Local",
   "imageUrl": null
 }
-```give 
+```
 
 Run the tests with `mvn test`.
